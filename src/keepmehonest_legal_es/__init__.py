@@ -8,3 +8,8 @@ __all__ = [
     "Reference", "ReferenceKind", "SourceKind", "find_references",
     "parse_identifier", "review_claim", "to_core_document", "verify_quote",
 ]
+
+# M2: independent argument input and conservatively scoped official-source clients.
+from .independent import verify_argument
+from .sources import BOEClient, TCClient, SecureHTTP, FetchError, SourceUnavailable
+__all__ += ["verify_argument", "BOEClient", "TCClient", "SecureHTTP", "FetchError", "SourceUnavailable"]
