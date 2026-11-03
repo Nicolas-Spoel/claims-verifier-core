@@ -1,0 +1,1134 @@
+{
+  "schema_version": "2.0",
+  "engine": {
+    "name": "claims-verifier",
+    "version": "0.1.1",
+    "judge": "lexical-v2-guarded",
+    "retriever": "Bm25Index"
+  },
+  "corpus": {
+    "fingerprint": "afd260b992f03ab02bedc2a9c9442f5846fa0fd7c08d992fe1c7cbfcde82c757",
+    "passages": 22,
+    "documents": [
+      {
+        "doc_id": "annual_report_2023",
+        "title": "Annual report 2023 — Nimbus Logística S.A.C.",
+        "date": "2024-02-15",
+        "source_path": "annual_report_2023.md",
+        "sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8"
+      },
+      {
+        "doc_id": "fleet_audit_2024",
+        "title": "Operational fleet audit 2024",
+        "date": "2024-06-30",
+        "source_path": "fleet_audit_2024.md",
+        "sha256": "0119006ddd060d1f6d8270fb2a6d0c5b94507cce6227c67597b86bb302ac4cd3"
+      },
+      {
+        "doc_id": "press_release_q1_2024",
+        "title": "Press release — first-quarter 2024 results",
+        "date": "2024-05-10",
+        "source_path": "press_release_q1_2024.md",
+        "sha256": "e29c02eed62e994a6cc6c3c96e5dc427af4ada5aa9e6671a49a4dc6f8dd5b760"
+      },
+      {
+        "doc_id": "sustainability_policy",
+        "title": "sustainability_policy",
+        "date": null,
+        "source_path": "sustainability_policy.txt",
+        "sha256": "5612b0b29d36c01f244f68b2c47f345ada3e1ec76e2559b638ff8e50077f1912"
+      },
+      {
+        "doc_id": "workplace_survey_2023",
+        "title": "Workplace climate survey 2023",
+        "date": "2023-12-05",
+        "source_path": "workplace_survey_2023.json#0",
+        "sha256": "7c97221e499b72af367ea15a2374fabf62901ca8ace1550fcbe35bffe642b959"
+      }
+    ]
+  },
+  "sources": {
+    "received": 5,
+    "examined": 5,
+    "excluded": [],
+    "records": [
+      {
+        "path": "annual_report_2023.md",
+        "status": "examined",
+        "reason": null,
+        "doc_ids": [
+          "annual_report_2023"
+        ],
+        "sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8"
+      },
+      {
+        "path": "fleet_audit_2024.md",
+        "status": "examined",
+        "reason": null,
+        "doc_ids": [
+          "fleet_audit_2024"
+        ],
+        "sha256": "0119006ddd060d1f6d8270fb2a6d0c5b94507cce6227c67597b86bb302ac4cd3"
+      },
+      {
+        "path": "press_release_q1_2024.md",
+        "status": "examined",
+        "reason": null,
+        "doc_ids": [
+          "press_release_q1_2024"
+        ],
+        "sha256": "e29c02eed62e994a6cc6c3c96e5dc427af4ada5aa9e6671a49a4dc6f8dd5b760"
+      },
+      {
+        "path": "sustainability_policy.txt",
+        "status": "examined",
+        "reason": null,
+        "doc_ids": [
+          "sustainability_policy"
+        ],
+        "sha256": "5612b0b29d36c01f244f68b2c47f345ada3e1ec76e2559b638ff8e50077f1912"
+      },
+      {
+        "path": "workplace_survey_2023.json",
+        "status": "examined",
+        "reason": null,
+        "doc_ids": [
+          "workplace_survey_2023"
+        ],
+        "sha256": "6846344179f6e0ed81d52da3c8b0f79aa5faeb4d3f3a7708bca61248d096ddbb"
+      }
+    ],
+    "accounting": {
+      "completeness": "unverifiable",
+      "expected": null
+    },
+    "note": "Completeness can only be verified against an expected inventory (--expected); documents never supplied to the verifier are unknown to it."
+  },
+  "search": {
+    "method": "Bm25Index",
+    "top_k": 8
+  },
+  "score_semantics": "score: heuristic strength of the deciding evidence in [0, 1], for ordering and triage only; it is NOT a calibrated probability that the claim is true, and it is null for abstentions.",
+  "summary": {
+    "total_claims": 12,
+    "by_verdict": {
+      "SUPPORTED": 3,
+      "PARTIALLY_SUPPORTED": 4,
+      "CONTRADICTED": 2,
+      "CONFLICTING": 1,
+      "INCONCLUSIVE": 1,
+      "NOT_ENOUGH_EVIDENCE": 1
+    },
+    "needs_review": 9,
+    "skipped_segments": 3,
+    "unchecked_factual_segments": 0,
+    "claims_with_related_evidence": 0.92,
+    "documents_cited": [
+      "annual_report_2023",
+      "fleet_audit_2024",
+      "press_release_q1_2024",
+      "sustainability_policy",
+      "workplace_survey_2023"
+    ],
+    "documents_not_cited": []
+  },
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "Nimbus Logística recorded revenue of S/ 48.6 million in 2023.",
+      "char_span": [
+        32,
+        93
+      ],
+      "verdict": "SUPPORTED",
+      "score": 0.9,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "Supported by 1 passage(s) in 1 document(s).",
+      "uncertainty": [
+        {
+          "code": "SINGLE_SOURCE",
+          "detail": "supported only by annual_report_2023"
+        }
+      ],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "supports",
+          "doc_id": "annual_report_2023",
+          "document_title": "Annual report 2023 — Nimbus Logística S.A.C.",
+          "document_date": "2024-02-15",
+          "source_path": "annual_report_2023.md",
+          "document_sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "c08e27a27d3d6733aaebe32c4901549d505165ffa7c129d7876db56126e73cf3",
+          "passage_id": "annual_report_2023:p3",
+          "line": 13,
+          "char_span": [
+            282,
+            392
+          ],
+          "quote": "Nimbus Logística's revenue reached S/ 48.6 million in 2023, which represents growth of 12% compared with 2022.",
+          "relevance": 1.0,
+          "retrieval_score": 6.3824,
+          "signals": [
+            {
+              "code": "NUMBER_MATCH",
+              "detail": "S/ 48.6 million ≈ S/ 48.6 million"
+            }
+          ],
+          "matched_terms": [
+            "nimbu",
+            "logis",
+            "ingre",
+            "milli"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 7,
+        "documents": [
+          "annual_report_2023",
+          "press_release_q1_2024",
+          "sustainability_policy"
+        ]
+      }
+    },
+    {
+      "claim_id": "C2",
+      "text": "Revenue grew by 15% compared with 2022.",
+      "char_span": [
+        94,
+        133
+      ],
+      "verdict": "CONTRADICTED",
+      "score": 0.95,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "The evidence contradicts the claim (claim 15% vs evidence 12%).",
+      "uncertainty": [],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "contradicts",
+          "doc_id": "annual_report_2023",
+          "document_title": "Annual report 2023 — Nimbus Logística S.A.C.",
+          "document_date": "2024-02-15",
+          "source_path": "annual_report_2023.md",
+          "document_sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "c08e27a27d3d6733aaebe32c4901549d505165ffa7c129d7876db56126e73cf3",
+          "passage_id": "annual_report_2023:p3",
+          "line": 13,
+          "char_span": [
+            282,
+            392
+          ],
+          "quote": "Nimbus Logística's revenue reached S/ 48.6 million in 2023, which represents growth of 12% compared with 2022.",
+          "relevance": 1.0,
+          "retrieval_score": 5.2532,
+          "signals": [
+            {
+              "code": "NUMBER_MISMATCH",
+              "detail": "claim 15% vs evidence 12%"
+            }
+          ],
+          "matched_terms": [
+            "ingre",
+            "creci",
+            "compa"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 5,
+        "documents": [
+          "annual_report_2023",
+          "fleet_audit_2024",
+          "press_release_q1_2024"
+        ]
+      }
+    },
+    {
+      "claim_id": "C3",
+      "text": "The company opened a distribution center in Arequipa in March 2023.",
+      "char_span": [
+        134,
+        201
+      ],
+      "verdict": "SUPPORTED",
+      "score": 0.9,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "Supported by 1 passage(s) in 1 document(s).",
+      "uncertainty": [
+        {
+          "code": "SINGLE_SOURCE",
+          "detail": "supported only by annual_report_2023"
+        }
+      ],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "supports",
+          "doc_id": "annual_report_2023",
+          "document_title": "Annual report 2023 — Nimbus Logística S.A.C.",
+          "document_date": "2024-02-15",
+          "source_path": "annual_report_2023.md",
+          "document_sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "9ce3b90e6672c2cf7a61c1e56d7d143ea0e3f3aeaddd996f0176fb23431b9427",
+          "passage_id": "annual_report_2023:p6",
+          "line": 19,
+          "char_span": [
+            519,
+            586
+          ],
+          "quote": "In March 2023 the company opened a distribution center in Arequipa.",
+          "relevance": 1.0,
+          "retrieval_score": 10.9238,
+          "signals": [],
+          "matched_terms": [
+            "open",
+            "distr",
+            "cente",
+            "arequ"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 2,
+        "documents": [
+          "annual_report_2023",
+          "press_release_q1_2024"
+        ]
+      }
+    },
+    {
+      "claim_id": "C4",
+      "text": "The company has 1,240 employees.",
+      "char_span": [
+        202,
+        234
+      ],
+      "verdict": "PARTIALLY_SUPPORTED",
+      "score": 0.7,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "The evidence supports only part of the claim, or supports it with less certainty.",
+      "uncertainty": [
+        {
+          "code": "STATE_NOT_CURRENT",
+          "detail": "the claim describes a current situation; the evidence, a past event or state"
+        }
+      ],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "partial",
+          "doc_id": "annual_report_2023",
+          "document_title": "Annual report 2023 — Nimbus Logística S.A.C.",
+          "document_date": "2024-02-15",
+          "source_path": "annual_report_2023.md",
+          "document_sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "9dce7bd283c79efb4dc7c71bc8ab0c57ab07cd351eb96682ff11e224f6573c17",
+          "passage_id": "annual_report_2023:p8",
+          "line": 21,
+          "char_span": [
+            632,
+            678
+          ],
+          "quote": "The workforce at year-end was 1,240 employees.",
+          "relevance": 1.0,
+          "retrieval_score": 2.5908,
+          "signals": [
+            {
+              "code": "NUMBER_MATCH",
+              "detail": "1,240 ≈ 1,240"
+            },
+            {
+              "code": "STATE_NOT_CURRENT",
+              "detail": "the claim describes a current situation; the evidence, a past event or state"
+            }
+          ],
+          "matched_terms": [
+            "emple"
+          ],
+          "missing_terms": []
+        },
+        {
+          "stance": "partial",
+          "doc_id": "workplace_survey_2023",
+          "document_title": "Workplace climate survey 2023",
+          "document_date": "2023-12-05",
+          "source_path": "workplace_survey_2023.json#0",
+          "document_sha256": "7c97221e499b72af367ea15a2374fabf62901ca8ace1550fcbe35bffe642b959",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "03dbc7485aa96d36d596459face2f9282f451827b0bb1c478ad6b86fca7b6b64",
+          "passage_id": "workplace_survey_2023:p2",
+          "line": 1,
+          "char_span": [
+            91,
+            165
+          ],
+          "quote": "78% of employees declared themselves satisfied with the workplace climate.",
+          "relevance": 1.0,
+          "retrieval_score": 1.6088,
+          "signals": [
+            {
+              "code": "NUMBER_NOT_FOUND",
+              "detail": "1,240 does not appear in this passage"
+            },
+            {
+              "code": "REPORTED_SPEECH",
+              "detail": "the evidence attributes the information to a third party (“declared”); the claim states it as fact"
+            },
+            {
+              "code": "SCOPE_OPERATOR",
+              "detail": "the evidence restricts or qualifies the scope: 78% of employees"
+            },
+            {
+              "code": "STATE_NOT_CURRENT",
+              "detail": "the claim describes a current situation; the evidence, a past event or state"
+            }
+          ],
+          "matched_terms": [
+            "emple"
+          ],
+          "missing_terms": []
+        },
+        {
+          "stance": "partial",
+          "doc_id": "workplace_survey_2023",
+          "document_title": "Workplace climate survey 2023",
+          "document_date": "2023-12-05",
+          "source_path": "workplace_survey_2023.json#0",
+          "document_sha256": "7c97221e499b72af367ea15a2374fabf62901ca8ace1550fcbe35bffe642b959",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "20284b07c99854012b6f03f394f54a71f2079effeb0f96e9cdac94233b2dbe64",
+          "passage_id": "workplace_survey_2023:p3",
+          "line": 1,
+          "char_span": [
+            166,
+            220
+          ],
+          "quote": "Some employees pointed out the need for more training.",
+          "relevance": 1.0,
+          "retrieval_score": 1.6088,
+          "signals": [
+            {
+              "code": "NUMBER_NOT_FOUND",
+              "detail": "1,240 does not appear in this passage"
+            },
+            {
+              "code": "REPORTED_SPEECH",
+              "detail": "the evidence attributes the information to a third party (“pointed”); the claim states it as fact"
+            },
+            {
+              "code": "SCOPE_OPERATOR",
+              "detail": "the evidence restricts or qualifies the scope: some"
+            },
+            {
+              "code": "STATE_NOT_CURRENT",
+              "detail": "the claim describes a current situation; the evidence, a past event or state"
+            }
+          ],
+          "matched_terms": [
+            "emple"
+          ],
+          "missing_terms": []
+        },
+        {
+          "stance": "partial",
+          "doc_id": "workplace_survey_2023",
+          "document_title": "Workplace climate survey 2023",
+          "document_date": "2023-12-05",
+          "source_path": "workplace_survey_2023.json#0",
+          "document_sha256": "7c97221e499b72af367ea15a2374fabf62901ca8ace1550fcbe35bffe642b959",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "5d6bd3bfcdea733965496c14d50390248459b41f67fa4d809e7c962f45b69b5b",
+          "passage_id": "workplace_survey_2023:p1",
+          "line": 1,
+          "char_span": [
+            0,
+            90
+          ],
+          "quote": "The annual workplace climate survey achieved a participation rate of 91% of the workforce.",
+          "relevance": 1.0,
+          "retrieval_score": 1.3959,
+          "signals": [
+            {
+              "code": "NUMBER_NOT_FOUND",
+              "detail": "1,240 does not appear in this passage"
+            },
+            {
+              "code": "SCOPE_OPERATOR",
+              "detail": "the evidence restricts or qualifies the scope: 91% of the workforce"
+            },
+            {
+              "code": "STATE_NOT_CURRENT",
+              "detail": "the claim describes a current situation; the evidence, a past event or state"
+            }
+          ],
+          "matched_terms": [
+            "emple"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 4,
+        "documents": [
+          "annual_report_2023",
+          "workplace_survey_2023"
+        ]
+      }
+    },
+    {
+      "claim_id": "C5",
+      "text": "The current fleet is 340 trucks.",
+      "char_span": [
+        236,
+        270
+      ],
+      "verdict": "CONFLICTING",
+      "score": null,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "The sources disagree: some support the claim and others contradict it. Requires human review.",
+      "uncertainty": [
+        {
+          "code": "CONFLICTING_SOURCES",
+          "detail": "for: press_release_q1_2024; against: annual_report_2023; most recent source: press_release_q1_2024 (2024-05-10, for)"
+        }
+      ],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "contradicts",
+          "doc_id": "annual_report_2023",
+          "document_title": "Annual report 2023 — Nimbus Logística S.A.C.",
+          "document_date": "2024-02-15",
+          "source_path": "annual_report_2023.md",
+          "document_sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "0df5daa47ff6ac8fd1111d693d7bb127702cd6d9ad9bcd9843b46595bcdd26bf",
+          "passage_id": "annual_report_2023:p7",
+          "line": 20,
+          "char_span": [
+            587,
+            631
+          ],
+          "quote": "At the end of 2023 the fleet was 310 trucks.",
+          "relevance": 1.0,
+          "retrieval_score": 4.237,
+          "signals": [
+            {
+              "code": "NUMBER_MISMATCH",
+              "detail": "claim 340 vs evidence 310"
+            }
+          ],
+          "matched_terms": [
+            "fleet",
+            "camio"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 5,
+        "documents": [
+          "annual_report_2023",
+          "fleet_audit_2024",
+          "press_release_q1_2024",
+          "sustainability_policy"
+        ]
+      }
+    },
+    {
+      "claim_id": "C6",
+      "text": "The new distribution center in Trujillo will open in 2025.",
+      "char_span": [
+        271,
+        331
+      ],
+      "verdict": "PARTIALLY_SUPPORTED",
+      "score": 0.7,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "The evidence supports only part of the claim, or supports it with less certainty.",
+      "uncertainty": [
+        {
+          "code": "CERTAINTY_OVERSTATED",
+          "detail": "the evidence is tentative, conditional or projected; the claim states it with more certainty"
+        },
+        {
+          "code": "CLAIM_HEDGED",
+          "detail": "the claim itself is tentative or opinion-based"
+        }
+      ],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "partial",
+          "doc_id": "press_release_q1_2024",
+          "document_title": "Press release — first-quarter 2024 results",
+          "document_date": "2024-05-10",
+          "source_path": "press_release_q1_2024.md",
+          "document_sha256": "e29c02eed62e994a6cc6c3c96e5dc427af4ada5aa9e6671a49a4dc6f8dd5b760",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "be622ef9fd98f4179fa2005e424f0af553594d18871d5df55dc1628d71a53d1c",
+          "passage_id": "press_release_q1_2024:p4",
+          "line": 13,
+          "char_span": [
+            410,
+            539
+          ],
+          "quote": "The company is evaluating a new distribution center in Trujillo, which could open in 2025 subject to obtaining municipal permits.",
+          "relevance": 1.0,
+          "retrieval_score": 8.286,
+          "signals": [
+            {
+              "code": "HEDGED_EVIDENCE",
+              "detail": "the evidence is tentative, conditional or projected; the claim states it with more certainty"
+            }
+          ],
+          "matched_terms": [
+            "new",
+            "distr",
+            "cente",
+            "truji",
+            "open"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 3,
+        "documents": [
+          "annual_report_2023",
+          "press_release_q1_2024"
+        ]
+      }
+    },
+    {
+      "claim_id": "C7",
+      "text": "All employees are satisfied with the workplace climate.",
+      "char_span": [
+        332,
+        389
+      ],
+      "verdict": "PARTIALLY_SUPPORTED",
+      "score": 0.7,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "The evidence supports only part of the claim, or supports it with less certainty.",
+      "uncertainty": [
+        {
+          "code": "REPORTED_SPEECH",
+          "detail": "the evidence attributes the information to a third party (“declared”); the claim states it as fact"
+        },
+        {
+          "code": "SCOPE_OPERATOR",
+          "detail": "the evidence restricts or qualifies the scope: 78% of employees"
+        },
+        {
+          "code": "STATE_NOT_CURRENT",
+          "detail": "the claim describes a current situation; the evidence, a past event or state"
+        },
+        {
+          "code": "QUANTIFIER_OVERSTATED",
+          "detail": "the claim generalizes; the evidence covers only part"
+        }
+      ],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "partial",
+          "doc_id": "workplace_survey_2023",
+          "document_title": "Workplace climate survey 2023",
+          "document_date": "2023-12-05",
+          "source_path": "workplace_survey_2023.json#0",
+          "document_sha256": "7c97221e499b72af367ea15a2374fabf62901ca8ace1550fcbe35bffe642b959",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "03dbc7485aa96d36d596459face2f9282f451827b0bb1c478ad6b86fca7b6b64",
+          "passage_id": "workplace_survey_2023:p2",
+          "line": 1,
+          "char_span": [
+            91,
+            165
+          ],
+          "quote": "78% of employees declared themselves satisfied with the workplace climate.",
+          "relevance": 1.0,
+          "retrieval_score": 8.6778,
+          "signals": [
+            {
+              "code": "REPORTED_SPEECH",
+              "detail": "the evidence attributes the information to a third party (“declared”); the claim states it as fact"
+            },
+            {
+              "code": "SCOPE_OPERATOR",
+              "detail": "the evidence restricts or qualifies the scope: 78% of employees"
+            },
+            {
+              "code": "STATE_NOT_CURRENT",
+              "detail": "the claim describes a current situation; the evidence, a past event or state"
+            },
+            {
+              "code": "QUANTIFIER_OVERSTATED",
+              "detail": "the claim generalizes; the evidence covers only part"
+            }
+          ],
+          "matched_terms": [
+            "emple",
+            "satis",
+            "workp",
+            "clima"
+          ],
+          "missing_terms": []
+        },
+        {
+          "stance": "partial",
+          "doc_id": "workplace_survey_2023",
+          "document_title": "Workplace climate survey 2023",
+          "document_date": "2023-12-05",
+          "source_path": "workplace_survey_2023.json#0",
+          "document_sha256": "7c97221e499b72af367ea15a2374fabf62901ca8ace1550fcbe35bffe642b959",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "5d6bd3bfcdea733965496c14d50390248459b41f67fa4d809e7c962f45b69b5b",
+          "passage_id": "workplace_survey_2023:p1",
+          "line": 1,
+          "char_span": [
+            0,
+            90
+          ],
+          "quote": "The annual workplace climate survey achieved a participation rate of 91% of the workforce.",
+          "relevance": 0.6898,
+          "retrieval_score": 5.1934,
+          "signals": [
+            {
+              "code": "SCOPE_OPERATOR",
+              "detail": "the evidence restricts or qualifies the scope: 91% of the workforce"
+            },
+            {
+              "code": "STATE_NOT_CURRENT",
+              "detail": "the claim describes a current situation; the evidence, a past event or state"
+            },
+            {
+              "code": "QUANTIFIER_OVERSTATED",
+              "detail": "the claim generalizes; the evidence covers only part"
+            },
+            {
+              "code": "MISSING_TERMS",
+              "detail": "satis"
+            }
+          ],
+          "matched_terms": [
+            "emple",
+            "workp",
+            "clima"
+          ],
+          "missing_terms": [
+            "satis"
+          ]
+        },
+        {
+          "stance": "partial",
+          "doc_id": "workplace_survey_2023",
+          "document_title": "Workplace climate survey 2023",
+          "document_date": "2023-12-05",
+          "source_path": "workplace_survey_2023.json#0",
+          "document_sha256": "7c97221e499b72af367ea15a2374fabf62901ca8ace1550fcbe35bffe642b959",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "20284b07c99854012b6f03f394f54a71f2079effeb0f96e9cdac94233b2dbe64",
+          "passage_id": "workplace_survey_2023:p3",
+          "line": 1,
+          "char_span": [
+            166,
+            220
+          ],
+          "quote": "Some employees pointed out the need for more training.",
+          "relevance": 0.5927,
+          "retrieval_score": 1.6088,
+          "signals": [
+            {
+              "code": "REPORTED_SPEECH",
+              "detail": "the evidence attributes the information to a third party (“pointed”); the claim states it as fact"
+            },
+            {
+              "code": "SCOPE_OPERATOR",
+              "detail": "the evidence restricts or qualifies the scope: some"
+            },
+            {
+              "code": "STATE_NOT_CURRENT",
+              "detail": "the claim describes a current situation; the evidence, a past event or state"
+            },
+            {
+              "code": "QUANTIFIER_OVERSTATED",
+              "detail": "the claim generalizes; the evidence covers only part"
+            }
+          ],
+          "matched_terms": [
+            "emple",
+            "satis",
+            "workp",
+            "clima"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 4,
+        "documents": [
+          "annual_report_2023",
+          "workplace_survey_2023"
+        ]
+      }
+    },
+    {
+      "claim_id": "C8",
+      "text": "The accident rate did not decrease in 2024.",
+      "char_span": [
+        390,
+        435
+      ],
+      "verdict": "INCONCLUSIVE",
+      "score": null,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "There is related evidence, but it does not allow a confident decision (same change with opposite polarity; the evidence restricts or qualifies the scope: half of 2024; the evidence covers only part of the period: first half). Requires human review.",
+      "uncertainty": [
+        {
+          "code": "NEGATION_MISMATCH",
+          "detail": "same change with opposite polarity"
+        },
+        {
+          "code": "SCOPE_OPERATOR",
+          "detail": "the evidence restricts or qualifies the scope: half of 2024"
+        },
+        {
+          "code": "PERIOD_SUBSET",
+          "detail": "the evidence covers only part of the period: first half"
+        }
+      ],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "ambiguous",
+          "doc_id": "fleet_audit_2024",
+          "document_title": "Operational fleet audit 2024",
+          "document_date": "2024-06-30",
+          "source_path": "fleet_audit_2024.md",
+          "document_sha256": "0119006ddd060d1f6d8270fb2a6d0c5b94507cce6227c67597b86bb302ac4cd3",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "e3d06a06e3a49e206d49cdf7002b26c4903c1d172d31b1ec2e8aee6a2de018a3",
+          "passage_id": "fleet_audit_2024:p2",
+          "line": 11,
+          "char_span": [
+            258,
+            358
+          ],
+          "quote": "In the first half of 2024, the accident rate decreased by 18% compared with the same period of 2023.",
+          "relevance": 1.0,
+          "retrieval_score": 6.2598,
+          "signals": [
+            {
+              "code": "NEGATION_MISMATCH",
+              "detail": "same change with opposite polarity"
+            },
+            {
+              "code": "SCOPE_OPERATOR",
+              "detail": "the evidence restricts or qualifies the scope: half of 2024"
+            },
+            {
+              "code": "PERIOD_SUBSET",
+              "detail": "the evidence covers only part of the period: first half"
+            }
+          ],
+          "matched_terms": [
+            "accid",
+            "rate",
+            "dismi"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 4,
+        "documents": [
+          "annual_report_2023",
+          "fleet_audit_2024",
+          "sustainability_policy",
+          "workplace_survey_2023"
+        ]
+      }
+    },
+    {
+      "claim_id": "C9",
+      "text": "The net margin increased to 6.8% in 2023.",
+      "char_span": [
+        436,
+        479
+      ],
+      "verdict": "CONTRADICTED",
+      "score": 0.85,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "The evidence contradicts the claim (the claim states an increase, the evidence states a decrease).",
+      "uncertainty": [],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "contradicts",
+          "doc_id": "annual_report_2023",
+          "document_title": "Annual report 2023 — Nimbus Logística S.A.C.",
+          "document_date": "2024-02-15",
+          "source_path": "annual_report_2023.md",
+          "document_sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "d76f1624b5bc4d30b22303e6719f9301f1823852d4424e5974bf687bcb2f6a08",
+          "passage_id": "annual_report_2023:p4",
+          "line": 14,
+          "char_span": [
+            393,
+            471
+          ],
+          "quote": "The net margin decreased to 6.8% in 2023, compared with 7.4% recorded in 2022.",
+          "relevance": 1.0,
+          "retrieval_score": 5.7591,
+          "signals": [
+            {
+              "code": "DIRECTION_MISMATCH",
+              "detail": "the claim states an increase, the evidence states a decrease"
+            }
+          ],
+          "matched_terms": [
+            "net",
+            "margi",
+            "creci"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 5,
+        "documents": [
+          "annual_report_2023",
+          "press_release_q1_2024"
+        ]
+      }
+    },
+    {
+      "claim_id": "C10",
+      "text": "The general manager is Lucía Ramos.",
+      "char_span": [
+        480,
+        517
+      ],
+      "verdict": "SUPPORTED",
+      "score": 0.9,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "Supported by 1 passage(s) in 1 document(s).",
+      "uncertainty": [
+        {
+          "code": "SINGLE_SOURCE",
+          "detail": "supported only by annual_report_2023"
+        }
+      ],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "supports",
+          "doc_id": "annual_report_2023",
+          "document_title": "Annual report 2023 — Nimbus Logística S.A.C.",
+          "document_date": "2024-02-15",
+          "source_path": "annual_report_2023.md",
+          "document_sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "5094bcbf1996e8b77d9ec82503d00bfa23e72dea7d3769e453d0da885512cf6d",
+          "passage_id": "annual_report_2023:p9",
+          "line": 25,
+          "char_span": [
+            705,
+            793
+          ],
+          "quote": "The general manager of Nimbus Logística is Lucía Ramos, who took office in January 2021.",
+          "relevance": 1.0,
+          "retrieval_score": 8.9063,
+          "signals": [],
+          "matched_terms": [
+            "gener",
+            "geren",
+            "lucia",
+            "ramo"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 2,
+        "documents": [
+          "annual_report_2023"
+        ]
+      }
+    },
+    {
+      "claim_id": "C11",
+      "text": "Nimbus Logística has been listed on the Lima Stock Exchange since 2019.",
+      "char_span": [
+        518,
+        591
+      ],
+      "verdict": "NOT_ENOUGH_EVIDENCE",
+      "score": null,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "No evidence was found in the corpus that supports or refutes the claim.",
+      "uncertainty": [
+        {
+          "code": "OUT_OF_CORPUS_SCOPE",
+          "detail": "terms absent from the corpus: list, stock, excha"
+        },
+        {
+          "code": "NO_EVIDENCE",
+          "detail": "best term coverage 0.21"
+        }
+      ],
+      "terms_absent_from_corpus": [
+        "list",
+        "stock",
+        "excha"
+      ],
+      "evidence": [],
+      "examined": {
+        "passages": 8,
+        "documents": [
+          "annual_report_2023",
+          "press_release_q1_2024",
+          "sustainability_policy"
+        ]
+      }
+    },
+    {
+      "claim_id": "C12",
+      "text": "Nimbus Logística reduced its carbon emissions by 30%.",
+      "char_span": [
+        592,
+        647
+      ],
+      "verdict": "PARTIALLY_SUPPORTED",
+      "score": 0.7,
+      "score_kind": "heuristic_uncalibrated",
+      "rationale": "The evidence supports only part of the claim, or supports it with less certainty.",
+      "uncertainty": [
+        {
+          "code": "NONFINITE_PREDICATE",
+          "detail": "the action appears only as an intention, accusation or possibility (“reduce”)"
+        },
+        {
+          "code": "CERTAINTY_OVERSTATED",
+          "detail": "the evidence is tentative, conditional or projected; the claim states it with more certainty"
+        }
+      ],
+      "terms_absent_from_corpus": [],
+      "evidence": [
+        {
+          "stance": "partial",
+          "doc_id": "sustainability_policy",
+          "document_title": "sustainability_policy",
+          "document_date": null,
+          "source_path": "sustainability_policy.txt",
+          "document_sha256": "5612b0b29d36c01f244f68b2c47f345ada3e1ec76e2559b638ff8e50077f1912",
+          "document_version": null,
+          "source_in_expected_inventory": null,
+          "passage_sha256": "3897ffab7361726e07ec7b5d2da4aa6331eef006e8face7b529de23c603fb4d2",
+          "passage_id": "sustainability_policy:p2",
+          "line": 3,
+          "char_span": [
+            61,
+            171
+          ],
+          "quote": "Nimbus Logística plans to reduce its carbon emissions by 30% by 2030 through the electrification of its fleet.",
+          "relevance": 1.0,
+          "retrieval_score": 7.9209,
+          "signals": [
+            {
+              "code": "NUMBER_MATCH",
+              "detail": "30% ≈ 30%"
+            },
+            {
+              "code": "NONFINITE_PREDICATE",
+              "detail": "the action appears only as an intention, accusation or possibility (“reduce”)"
+            },
+            {
+              "code": "HEDGED_EVIDENCE",
+              "detail": "the evidence is tentative, conditional or projected; the claim states it with more certainty"
+            }
+          ],
+          "matched_terms": [
+            "nimbu",
+            "logis",
+            "dismi",
+            "carbo",
+            "emisi"
+          ],
+          "missing_terms": []
+        }
+      ],
+      "examined": {
+        "passages": 8,
+        "documents": [
+          "annual_report_2023",
+          "fleet_audit_2024",
+          "press_release_q1_2024",
+          "sustainability_policy"
+        ]
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "text": "Summary of Nimbus Logística",
+      "char_span": [
+        0,
+        30
+      ],
+      "reason": "heading",
+      "unchecked_factual": false
+    },
+    {
+      "text": "Would you like more details?",
+      "char_span": [
+        649,
+        677
+      ],
+      "reason": "question",
+      "unchecked_factual": false
+    },
+    {
+      "text": "I hope this information is useful to you.",
+      "char_span": [
+        678,
+        719
+      ],
+      "reason": "conversational",
+      "unchecked_factual": false
+    }
+  ],
+  "limitations": [
+    "Lexical verification with safety guards: it compares terms, figures, dates, negation, direction, modality, stage (request vs outcome), entity roles and population scope using lexicons and surface rules; it does not understand meaning. When it sees risk signals it abstains (INCONCLUSIVE, PARTIALLY_SUPPORTED) instead of deciding.",
+    "Only the documents received are considered, and the search examines the most relevant passages for each claim: 'not enough evidence' does not mean that the claim is false. Corpus completeness can only be verified against an expected inventory.",
+    "The score is heuristic and uncalibrated: it is not the probability that the claim is true.",
+    "Evidence is assessed sentence by sentence (with the title, heading and previous sentence as context); facts spread over several sentences or expressed through deep paraphrase are usually left undecided.",
+    "The lexicons (synonyms, stages, modality, populations) cover administrative and business English and Spanish; outside that register, abstention increases."
+  ]
+}

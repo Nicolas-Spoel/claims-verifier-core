@@ -1,0 +1,24 @@
+{
+  "documents": [
+    {
+      "path": "annual_report_2023.md",
+      "sha256": "175afede5f0df62b12256e001e80b702f50eea593b21254455d476eeee75f7d8"
+    },
+    {
+      "path": "fleet_audit_2024.md",
+      "sha256": "0119006ddd060d1f6d8270fb2a6d0c5b94507cce6227c67597b86bb302ac4cd3"
+    },
+    {
+      "path": "press_release_q1_2024.md",
+      "sha256": "e29c02eed62e994a6cc6c3c96e5dc427af4ada5aa9e6671a49a4dc6f8dd5b760"
+    },
+    {
+      "path": "sustainability_policy.txt",
+      "sha256": "5612b0b29d36c01f244f68b2c47f345ada3e1ec76e2559b638ff8e50077f1912"
+    },
+    {
+      "path": "workplace_survey_2023.json",
+      "sha256": "6846344179f6e0ed81d52da3c8b0f79aa5faeb4d3f3a7708bca61248d096ddbb"
+    }
+  ]
+}
