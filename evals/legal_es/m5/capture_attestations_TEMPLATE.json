@@ -1,0 +1,23 @@
+{
+  "contract": "keepmehonest-legal-es/m5-capture-attestations/v1",
+  "attestations": [
+    {
+      "case_id": "PUB-M5-001",
+      "capture_file": "PUB-M5-001.txt",
+      "kind": "BOE",
+      "identifier": "BOE-A-1978-31229",
+      "section_id": "a24",
+      "official_url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+      "capture_checked_by": null,
+      "capture_checked_on": null,
+      "reuse_checked_by": null,
+      "reuse_checked_on": null,
+      "reuse_basis_url": null,
+      "license_scope": "INTERNAL_EXPERT_REVIEW_ONLY",
+      "no_confidential_data_verified": false,
+      "source_publication_checked": false,
+      "decision_note": null,
+      "source_version_as_of": null
+    }
+  ]
+}
