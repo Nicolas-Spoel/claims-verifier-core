@@ -1,0 +1,15 @@
+[
+  {
+    "contract": "keepmehonest-legal-es/m4-human-review/v1",
+    "case_id": "PUB-REPLACE-ME",
+    "source_kind": "BOE",
+    "evidence_sha256": null,
+    "argument_sha256": null,
+    "contains_confidential_data": false,
+    "reuse_reviewed": false,
+    "status": "PENDING_EXPERT",
+    "reviewer_a": null,
+    "reviewer_b": null,
+    "adjudication": null
+  }
+]

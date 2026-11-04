@@ -1,0 +1,47 @@
+{
+  "contract": "keepmehonest-legal-es/m4-public-review-candidates/v1",
+  "status": "UNANNOTATED_NOT_IN_EVALUATION",
+  "note": "Public candidate sources only. No legal conclusions, expert labels or measured legal accuracy.",
+  "candidates": [
+    {
+      "case_id": "PUB-BOE-ART24-01",
+      "source": "BOE",
+      "identifier": "BOE-A-1978-31229",
+      "section": "artículo 24",
+      "official_page": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+      "research_question": "¿Coinciden las citas literales con el artículo específico?",
+      "temporal_context": "La versión de consulta no demuestra vigencia ni aplicación en un caso concreto.",
+      "status": "PENDING_SOURCE_REUSE_CHECK_AND_EXPERT_ANNOTATION"
+    },
+    {
+      "case_id": "PUB-BOE-SECTION-02",
+      "source": "BOE",
+      "identifier": "BOE-A-1978-31229",
+      "section": "artículo 25 frente a evidencia aportada del artículo 24",
+      "official_page": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+      "research_question": "¿Se abstiene el verificador ante una cita de otra sección?",
+      "temporal_context": "Sin juicio automático sobre el derecho material.",
+      "status": "PENDING_SOURCE_REUSE_CHECK_AND_EXPERT_ANNOTATION"
+    },
+    {
+      "case_id": "PUB-TC-FJ1-01",
+      "source": "TC",
+      "identifier": "ECLI:ES:TC:2024:1",
+      "section": "STC 1/2024, HJ 30062, FJ1",
+      "official_page": "https://hj.tribunalconstitucional.es/HJ/es/Resolucion/Show/30062",
+      "research_question": "¿La cita recuperada pertenece a FJ1, sin confundir antecedentes ni FJ2?",
+      "temporal_context": "Ratio, contexto procesal y jurisprudencia posterior siguen sin revisar.",
+      "status": "PENDING_SOURCE_REUSE_CHECK_AND_EXPERT_ANNOTATION"
+    },
+    {
+      "case_id": "PUB-TC-CONTEXT-02",
+      "source": "TC",
+      "identifier": "ECLI:ES:TC:2024:1",
+      "section": "FJ1 y referencia al alcance de la sentencia",
+      "official_page": "https://hj.tribunalconstitucional.es/HJ/es/Resolucion/Show/30062",
+      "research_question": "¿Se distingue la cita literal de una conclusión que exceda lo expresamente aportado?",
+      "temporal_context": "No extrapolar a hechos no descritos; no inferir doctrina aplicable sin revisión.",
+      "status": "PENDING_SOURCE_REUSE_CHECK_AND_EXPERT_ANNOTATION"
+    }
+  ]
+}

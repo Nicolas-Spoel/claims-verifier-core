@@ -1,0 +1,367 @@
+{
+  "cases": [
+    {
+      "argument": "El artículo 10 de BOE-A-2099-999999 dispone «La prueba sintética requiere un acta firmada para ilustrar la verificación documental.».",
+      "argument_sha256": "1bb369c48334a9a40d8d28b9570d2a71b69d101bb5f7f0f39ed0f05bdbafa044",
+      "category": "quote_exact",
+      "evidence": [
+        {
+          "identifier": "BOE-A-2099-999999",
+          "official_url": "https://www.boe.es/buscar/act.php?id=BOE-A-2099-999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "a10",
+          "source": "BOE",
+          "text": "La prueba sintética requiere un acta firmada para ilustrar la verificación documental.",
+          "text_sha256": "11ff8846a0332b7387e1249909021565bbef57c43807c8aa0d69820257d1c56c",
+          "title": "FUENTE FICTICIA — NO OFICIAL",
+          "version_date": "2099-01-01"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "DOCUMENTARY_QUOTE_MATCH",
+          "contains": "dispone «La prueba sintética",
+          "forbidden_issues": [],
+          "required_issues": [
+            "EXACT_QUOTE_DOES_NOT_PROVE_PROPOSITION",
+            "BOE_VIGENCIA_AND_APPLICABILITY_NOT_ESTABLISHED"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-001"
+    },
+    {
+      "argument": "El artículo 10 de BOE-A-2099-999999 dispone «La prueba sintética no necesita ninguna constancia documental».",
+      "argument_sha256": "73f31a1c56db4a4a9cd4d6f6d102aef03628e38f778bead3aed3cf83a6933f48",
+      "category": "quote_mismatch",
+      "evidence": [
+        {
+          "identifier": "BOE-A-2099-999999",
+          "official_url": "https://www.boe.es/buscar/act.php?id=BOE-A-2099-999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "a10",
+          "source": "BOE",
+          "text": "La prueba sintética requiere un acta firmada para ilustrar la verificación documental.",
+          "text_sha256": "11ff8846a0332b7387e1249909021565bbef57c43807c8aa0d69820257d1c56c",
+          "title": "FUENTE FICTICIA — NO OFICIAL",
+          "version_date": "2099-01-01"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "QUOTED_PASSAGE_NOT_FOUND_IN_CITED_SECTION",
+          "contains": "dispone «La prueba sintética",
+          "forbidden_issues": [],
+          "required_issues": [
+            "DOCUMENTARY_SUPPORT_NOT_ESTABLISHED"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-002"
+    },
+    {
+      "argument": "El artículo 11 de BOE-A-2099-999999 regula la prueba simulada.",
+      "argument_sha256": "8e866470c6f3123addd895a26eab0d2033fb3e4fa2a535dd4e6b1aeb40bbf1a6",
+      "category": "wrong_article",
+      "evidence": [
+        {
+          "identifier": "BOE-A-2099-999999",
+          "official_url": "https://www.boe.es/buscar/act.php?id=BOE-A-2099-999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "a10",
+          "source": "BOE",
+          "text": "La prueba sintética requiere un acta firmada para ilustrar la verificación documental.",
+          "text_sha256": "11ff8846a0332b7387e1249909021565bbef57c43807c8aa0d69820257d1c56c",
+          "title": "FUENTE FICTICIA — NO OFICIAL",
+          "version_date": "2099-01-01"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "CITED_SECTION_NOT_SUPPLIED",
+          "contains": "artículo 11 de",
+          "forbidden_issues": [],
+          "required_issues": [
+            "EXACT_SOURCE_SECTION_NOT_LINKED"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-003"
+    },
+    {
+      "argument": "El razonamiento de prueba no identifica ninguna norma comprobable.",
+      "argument_sha256": "27805df5a7884486c14ed1ec78ca73032f8a44f66b846b20959a73628ec194c7",
+      "category": "no_identifier",
+      "evidence": [],
+      "expected_claims": [
+        {
+          "anchor_status": "NO_EXPLICIT_IDENTIFIER",
+          "contains": "no identifica ninguna norma",
+          "forbidden_issues": [],
+          "required_issues": [
+            "EXACT_SOURCE_SECTION_NOT_LINKED"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-004"
+    },
+    {
+      "argument": "La norma BOE-A-2099-999999 se menciona sin precisar artículo.",
+      "argument_sha256": "4bd63c5a8829320a42ffc6c5b4e3a6bd78844b9013ca1acf5697b9d59e837d32",
+      "category": "no_section",
+      "evidence": [
+        {
+          "identifier": "BOE-A-2099-999999",
+          "official_url": "https://www.boe.es/buscar/act.php?id=BOE-A-2099-999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "a10",
+          "source": "BOE",
+          "text": "La prueba sintética requiere un acta firmada para ilustrar la verificación documental.",
+          "text_sha256": "11ff8846a0332b7387e1249909021565bbef57c43807c8aa0d69820257d1c56c",
+          "title": "FUENTE FICTICIA — NO OFICIAL",
+          "version_date": "2099-01-01"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "SECTION_NOT_EXPLICITLY_IDENTIFIED",
+          "contains": "se menciona sin precisar artículo",
+          "forbidden_issues": [],
+          "required_issues": [
+            "EXACT_SOURCE_SECTION_NOT_LINKED"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-005"
+    },
+    {
+      "argument": "El artículo 10 de BOE-A-2099-999999 siempre se aplica sin excepción.",
+      "argument_sha256": "6ead68414ecea2fc395653e630068b7a40280fa33a61177d8589c5ac9d5267b9",
+      "category": "absolute_scope",
+      "evidence": [
+        {
+          "identifier": "BOE-A-2099-999999",
+          "official_url": "https://www.boe.es/buscar/act.php?id=BOE-A-2099-999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "a10",
+          "source": "BOE",
+          "text": "La prueba sintética requiere un acta firmada para ilustrar la verificación documental.",
+          "text_sha256": "11ff8846a0332b7387e1249909021565bbef57c43807c8aa0d69820257d1c56c",
+          "title": "FUENTE FICTICIA — NO OFICIAL",
+          "version_date": "2099-01-01"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "SECTION_LOCATED_NO_EXPLICIT_QUOTATION",
+          "contains": "siempre se aplica sin excepción",
+          "forbidden_issues": [],
+          "required_issues": [
+            "ABSOLUTE_SCOPE_REQUIRES_REVIEW"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-006"
+    },
+    {
+      "argument": "El artículo 10 de BOE-A-2099-999999 sigue vigente hoy.",
+      "argument_sha256": "3954d07445ebb67f6195240e68d3f206ceecea93ac673791be57ea17fdf5583e",
+      "category": "temporal_scope",
+      "evidence": [
+        {
+          "identifier": "BOE-A-2099-999999",
+          "official_url": "https://www.boe.es/buscar/act.php?id=BOE-A-2099-999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "a10",
+          "source": "BOE",
+          "text": "La prueba sintética requiere un acta firmada para ilustrar la verificación documental.",
+          "text_sha256": "11ff8846a0332b7387e1249909021565bbef57c43807c8aa0d69820257d1c56c",
+          "title": "FUENTE FICTICIA — NO OFICIAL",
+          "version_date": "2099-01-01"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "SECTION_LOCATED_NO_EXPLICIT_QUOTATION",
+          "contains": "sigue vigente hoy",
+          "forbidden_issues": [],
+          "required_issues": [
+            "ASSERTED_TEMPORAL_SCOPE_UNVERIFIED"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-007"
+    },
+    {
+      "argument": "El artículo 10 de BOE-A-2099-999999 regula la prueba simulada.",
+      "argument_sha256": "53cb555243a8cbe8c3f23e67328892ee3181c0fadbda123eda266a8402e08a98",
+      "category": "evidence_exception",
+      "evidence": [
+        {
+          "identifier": "BOE-A-2099-999999",
+          "official_url": "https://www.boe.es/buscar/act.php?id=BOE-A-2099-999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "a10",
+          "source": "BOE",
+          "text": "La prueba sintética requiere un acta firmada, salvo cuando se indique lo contrario.",
+          "text_sha256": "bbc69c9fcc4829b0be7da73c990f20d565e10986e7a3a67d72a37fc6dfe52182",
+          "title": "FUENTE FICTICIA — NO OFICIAL",
+          "version_date": "2099-01-01"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "SECTION_LOCATED_NO_EXPLICIT_QUOTATION",
+          "contains": "regula la prueba simulada",
+          "forbidden_issues": [],
+          "required_issues": [
+            "CITED_SECTION_CONTAINS_SCOPE_QUALIFIER"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-008"
+    },
+    {
+      "argument": "El FJ1 de ECLI:ES:TC:2099:999999 declara «El fundamento simulado delimita el objeto del recurso solo para pruebas técnicas.».",
+      "argument_sha256": "23b6a233de949c380e7317046aeb22180799fd63800d54c26575a93f9c4763f1",
+      "category": "tc_exact_quote",
+      "evidence": [
+        {
+          "decision_date": "2099-01-01",
+          "identifier": "ECLI:ES:TC:2099:999999",
+          "official_url": "https://hj.tribunalconstitucional.es/HJ/es/Resolucion/Show/999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "FJ1",
+          "source": "TC",
+          "text": "El fundamento simulado delimita el objeto del recurso solo para pruebas técnicas.",
+          "text_sha256": "72a6bb693d4b66c46019792b1e44635889cc90b4225774d1afccce406fe565fb",
+          "title": "FUENTE FICTICIA — NO OFICIAL"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "DOCUMENTARY_QUOTE_MATCH",
+          "contains": "declara «El fundamento simulado",
+          "forbidden_issues": [],
+          "required_issues": [
+            "TC_RATIO_PROCEDURAL_FIT_AND_LATER_CASES_UNCHECKED"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-009"
+    },
+    {
+      "argument": "El FJ2 de ECLI:ES:TC:2099:999999 fundamenta una regla simulada.",
+      "argument_sha256": "108a693759c112323f3faac96b2623683148a942ccaaa51cdc9d84856447ec5d",
+      "category": "tc_wrong_fj",
+      "evidence": [
+        {
+          "decision_date": "2099-01-01",
+          "identifier": "ECLI:ES:TC:2099:999999",
+          "official_url": "https://hj.tribunalconstitucional.es/HJ/es/Resolucion/Show/999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "FJ1",
+          "source": "TC",
+          "text": "El fundamento simulado delimita el objeto del recurso solo para pruebas técnicas.",
+          "text_sha256": "72a6bb693d4b66c46019792b1e44635889cc90b4225774d1afccce406fe565fb",
+          "title": "FUENTE FICTICIA — NO OFICIAL"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "CITED_SECTION_NOT_SUPPLIED",
+          "contains": "FJ2 de ECLI:ES:TC",
+          "forbidden_issues": [],
+          "required_issues": [
+            "EXACT_SOURCE_SECTION_NOT_LINKED"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-010"
+    },
+    {
+      "argument": "La fuente BOE-A-2099-999999 resulta relevante, pero no basta por sí sola para demostrar una conclusión jurídica concreta.",
+      "argument_sha256": "734862a90e3749c7c389607e9324889fabf38be7858dcfe112fd4f3223cac7d6",
+      "category": "sibling_not_inherited",
+      "evidence": [
+        {
+          "identifier": "BOE-A-2099-999999",
+          "official_url": "https://www.boe.es/buscar/act.php?id=BOE-A-2099-999999",
+          "origin": "TEST_FIXTURE",
+          "section_id": "a10",
+          "source": "BOE",
+          "text": "La prueba sintética requiere un acta firmada para ilustrar la verificación documental.",
+          "text_sha256": "11ff8846a0332b7387e1249909021565bbef57c43807c8aa0d69820257d1c56c",
+          "title": "FUENTE FICTICIA — NO OFICIAL",
+          "version_date": "2099-01-01"
+        }
+      ],
+      "expected_claims": [
+        {
+          "anchor_status": "SECTION_NOT_EXPLICITLY_IDENTIFIED",
+          "contains": "resulta relevante",
+          "forbidden_issues": [],
+          "required_issues": [
+            "EXACT_SOURCE_SECTION_NOT_LINKED"
+          ],
+          "sentence_only_identifiers": []
+        },
+        {
+          "anchor_status": "NO_EXPLICIT_IDENTIFIER",
+          "contains": "no basta por sí sola",
+          "forbidden_issues": [],
+          "required_issues": [
+            "OTHER_CLAUSE_CITATION_NOT_INHERITED"
+          ],
+          "sentence_only_identifiers": [
+            "BOE-A-2099-999999"
+          ]
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-011"
+    },
+    {
+      "argument": "El artículo 10 de BOE-A-2099-999999 resulta determinante para el caso simulado.",
+      "argument_sha256": "030aac7ed2b9da55f576537fcf23ebf546030a86a3b4600f0beb9453682e4dfe",
+      "category": "no_evidence",
+      "evidence": [],
+      "expected_claims": [
+        {
+          "anchor_status": "CITED_SECTION_NOT_SUPPLIED",
+          "contains": "resulta determinante",
+          "forbidden_issues": [],
+          "required_issues": [
+            "EXACT_SOURCE_SECTION_NOT_LINKED"
+          ],
+          "sentence_only_identifiers": []
+        }
+      ],
+      "expert_status": "NOT_EXPERT_REVIEWED",
+      "id": "SYN-012"
+    }
+  ],
+  "contract": "keepmehonest-legal-es/m4-synthetic-regression/v1",
+  "corpus_id": "KMH-M4-SYN-01",
+  "kind": "SYNTHETIC_REGRESSION_ONLY"
+}
