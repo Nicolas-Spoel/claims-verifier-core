@@ -7,14 +7,17 @@ is upgraded to an autonomous legal-correctness verdict.
 from __future__ import annotations
 
 import re
+from dataclasses import replace
 from typing import Iterable
 
 from .citations import find_references
 from .evidence import LegalEvidence
+from .grounding import anchor_claim
+from .legal_context import context_for_claims, screen_legal_scope, sentence_frames
 from .verification import review_claim, to_core_document
 
 
-REPORT_VERSION = "keepmehonest-legal-es/0.2.0"
+REPORT_VERSION = "keepmehonest-legal-es/0.3.1"
 
 # The generic Core may label a standalone courtesy as a claim. Suppress only
 # complete courtesy phrases; never suppress a sentence carrying legal content.
@@ -27,6 +30,21 @@ _COURTESY_ONLY = re.compile(
 
 def _is_courtesy_only(text: str) -> bool:
     return bool(_COURTESY_ONLY.fullmatch(text.strip().rstrip(".! ").strip()))
+
+
+# Generic Core splits sentences at "art. 24" and "FJ. 1" because they are not
+# in its general abbreviation lexicon. Protect ONLY this legal numeric form,
+# preserving character positions; restore the original before verification.
+_LEGAL_ABBR = re.compile(r"(?<!\w)(art|FJ)\.(?=\s*\d)", re.I)
+_LEGAL_MASK = re.compile(r"(?<!\w)(art|FJ)·(?=\s*\d)", re.I)
+
+
+def _protect_legal_abbreviations(text: str) -> str:
+    return _LEGAL_ABBR.sub(lambda m: m.group(1) + "·", text)
+
+
+def _restore_legal_abbreviations(text: str) -> str:
+    return _LEGAL_MASK.sub(lambda m: m.group(1) + ".", text)
 
 
 def verify_argument(text: str, evidence: Iterable[LegalEvidence], *, attempted_sources: Iterable[dict] = ()) -> dict:
@@ -74,14 +92,21 @@ def verify_argument(text: str, evidence: Iterable[LegalEvidence], *, attempted_s
     }
     # Use Core for extraction even when no documents have been supplied.
     from claims_verifier.claims import extract_claims
-    extracted = extract_claims(text)
-    claims = tuple(claim for claim in extracted.claims if not _is_courtesy_only(claim.text))
+    extracted = extract_claims(_protect_legal_abbreviations(text))
+    restored_claims = tuple(replace(c, text=_restore_legal_abbreviations(c.text)) for c in extracted.claims)
+    claims = tuple(claim for claim in restored_claims if not _is_courtesy_only(claim.text))
     result["unchecked_segments"] = [
-        {"text": s.text, "reason": s.reason, "factual": s.factual} for s in extracted.skipped
+        {"text": _restore_legal_abbreviations(s.text), "reason": s.reason, "factual": s.factual}
+        for s in extracted.skipped
     ] + [
         {"text": claim.text, "reason": "standalone_courtesy", "factual": False}
-        for claim in extracted.claims if _is_courtesy_only(claim.text)
+        for claim in restored_claims if _is_courtesy_only(claim.text)
     ]
+    # Reconstruct parent sentence context from the same length-preserving
+    # input used for Core extraction. A sibling citation is informational only:
+    # it is NEVER inherited as documentary evidence by this claim.
+    frames = sentence_frames(text, _protect_legal_abbreviations(text))
+    contexts = context_for_claims(text, claims, frames)
     core_results = {}
     if sources and claims:
         from claims_verifier import ClaimsVerifier
@@ -111,11 +136,16 @@ def verify_argument(text: str, evidence: Iterable[LegalEvidence], *, attempted_s
                                  "text_truncated": len(assessed.passage.text) > 500,
                                  "stance": assessed.stance.value,
                                  "signals": [signal.code for signal in assessed.signals]})
+        documentary = anchor_claim(claim.text, sources)
+        legal_screen = screen_legal_scope(claim.text, contexts[index], documentary, sources, attempted)
         result["claims"].append({
             "claim": claim.text, "citations": citations, "linked_cited_sources": relevant,
             "lexical_verdict": core_result.verdict.value if core_result else "NOT_EVALUATED",
             "lexical_score_is_calibrated": False, "review_status": "HUMAN_REVIEW_REQUIRED",
             "passages_examined": passages,
+            "documentary_grounding": documentary,
+            "sentence_context": contexts[index],
+            "legal_scope_screen": legal_screen,
             "coverage_warning": "No directly linked source for this citation" if citations and not relevant else None,
             "legal_support": "NOT_ASSESSED", "argument_quality": "NOT_ASSESSED",
         })
@@ -123,4 +153,35 @@ def verify_argument(text: str, evidence: Iterable[LegalEvidence], *, attempted_s
     cited_ids = {r.value for r in find_references(text)}
     result["coverage"]["unresolved_explicit_identifiers"] = sorted(cited_ids - provided_ids)
     result["coverage"]["sources_not_cited_in_argument"] = sorted(provided_ids - cited_ids)
+    statuses = [record["documentary_grounding"]["anchor_status"] for record in result["claims"]]
+    result["coverage"]["documentary_grounding"] = {
+        "claims_examined": len(statuses),
+        "claims_with_exact_documentary_quote": statuses.count("DOCUMENTARY_QUOTE_MATCH"),
+        "claims_requiring_review": len(statuses),
+        "note": "Documentary quotation matching is not legal support or applicability.",
+    }
+    # This is a deterministic review-indicator count, not a quality score.
+    # Absence of a flagged cue is NOT evidence of legal soundness.
+    result["coverage"]["m3b_legal_scope_screen"] = {
+        "mode": "NON_SEMANTIC_REVIEW_CUES_ONLY",
+        "claims_examined": len(result["claims"]),
+        "sentence_contexts_mapped": sum(
+            c["sentence_context"]["context_status"] == "SENTENCE_MAPPED"
+            for c in result["claims"]),
+        "claims_with_sibling_citations_not_inherited": sum(
+            bool(c["sentence_context"]["sentence_only_identifiers"])
+            for c in result["claims"]),
+        "claims_with_review_cues": sum(bool(c["legal_scope_screen"]["issues"])
+                                      for c in result["claims"]),
+        "claims_with_explicit_scope_cues": sum(
+            any(issue["code"] in {
+                "ABSOLUTE_SCOPE_REQUIRES_REVIEW",
+                "ASSERTED_TEMPORAL_SCOPE_UNVERIFIED",
+                "CITED_SECTION_CONTAINS_SCOPE_QUALIFIER",
+            } for issue in c["legal_scope_screen"]["issues"])
+            for c in result["claims"]),
+        "legal_support_assessed": 0,
+        "source_completeness": "UNVERIFIABLE",
+        "note": "No semantic/legal inference. No source or citation is inherited from another clause.",
+    }
     return result
